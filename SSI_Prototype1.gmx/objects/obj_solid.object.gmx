@@ -6,7 +6,7 @@
   <depth>1</depth>
   <persistent>0</persistent>
   <parentName>obj_PAR_Solid</parentName>
-  <maskName>spr_Solid_Wall</maskName>
+  <maskName>spr_Solid_Mask</maskName>
   <events/>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>

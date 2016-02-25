@@ -12,8 +12,10 @@
     <sprite>sprites\spr_Solid_Ground</sprite>
     <sprite>sprites\spr_Wall_Mask</sprite>
     <sprite>sprites\spr_Ground_Mask</sprite>
+    <sprite>sprites\spr_Solid_Mask</sprite>
     <sprite>sprites\spr_Salt_Andando</sprite>
     <sprite>sprites\spr_Salt_Pulando</sprite>
+    <sprite>sprites\spr_Salt_Comendo</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,7 +29,6 @@
       <object>objects\obj_Solid_Wall</object>
     </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_Test_1</room>
   </rooms>

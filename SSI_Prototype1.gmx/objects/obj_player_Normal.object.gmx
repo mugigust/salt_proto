@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_PAR_Player</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -28,15 +28,73 @@
             <string>///Iniciar Variáveis
 
 grav = 1;
-spd = 6;
+spd = 10;
 hspd = 5;
 vspd = 0;
+
+eating = false;
+eatalarm = false;
+facing = 1;
+control = true;
 
 jumps = 0;
 
 jumpsmax = 1;
 
-jspd = 14;
+jspd = 20;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>eating = false;
+hspd = 0;
+control = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>eating = true;
+alarm[1] = 20;
+control = false;
+image_index = 0;
+image_speed = 0.08;
+
 </string>
           </argument>
         </arguments>
@@ -65,10 +123,19 @@ var rkey = keyboard_check(vk_right);
 var lkey = -keyboard_check(vk_left);
 var jkey = keyboard_check_pressed(vk_up);
 var jkey_held = keyboard_check(vk_up);
+var eatkey = keyboard_check_pressed(vk_control);
 
 
 var move = rkey + lkey;
-hspd = move * spd;
+
+if (control)
+{
+    hspd = move * spd;
+    if(move &gt; 0)
+        facing = 1;
+    else if(move &lt; 0)
+        facing = -1;
+}
 
 // Gravidade
 if(vspd &lt; 20)
@@ -82,7 +149,7 @@ if(place_meeting(x, y+1, obj_PAR_Solid))
     jumps = jumpsmax;
 }
 
-if(jkey) &amp;&amp; (jumps &gt; 0)
+if(jkey) &amp;&amp; !eating &amp;&amp; (jumps &gt; 0)
 {
     vspd = -jspd;
     jumps -= 1;
@@ -119,24 +186,40 @@ if(place_meeting(x,y+vspd,obj_PAR_Solid))
 y += vspd;
 
 // Controle dos Sprites
-
-if(jumps = 0)
+if(eatkey &amp;&amp; !eating)
 {
-    sprite_index = spr_Salt_Pulando;
+    alarm[0] = 1;
+}
+
+if(eating)
+{
+    sprite_index = spr_Salt_Comendo;
+    hspd = (spd * facing) * 1.8;
+    if(jumps &gt; 0)
+    {
+        vspd = -jspd/2;
+        jumps -= 1;
+    } 
 }
 else
 {
-    if(xprevious != x)
+    if(jumps = 0)
     {
-        sprite_index = spr_Salt_Andando;
-        image_speed = 0.1;  
+        sprite_index = spr_Salt_Pulando;
     }
     else
     {
-        sprite_index = spr_Salt_Parado;
+        if(xprevious != x)
+        {
+            sprite_index = spr_Salt_Andando;
+            image_speed = 0.1;  
+        }
+        else
+        {
+            sprite_index = spr_Salt_Parado;
+        }
     }
 }
-
 // Controlar a direção que o personagem está virado
 
 if(xprevious &lt; x)
