@@ -12,22 +12,32 @@
     <sprite>sprites\spr_Solid_Ground</sprite>
     <sprite>sprites\spr_Wall_Mask</sprite>
     <sprite>sprites\spr_Ground_Mask</sprite>
+    <sprite>sprites\spr_Solid_Mask</sprite>
     <sprite>sprites\spr_Salt_Andando</sprite>
     <sprite>sprites\spr_Salt_Pulando</sprite>
+    <sprite>sprites\spr_Salt_Comendo</sprite>
+    <sprite>sprites\spr_E_Marsh_Stand</sprite>
+    <sprite>sprites\spr_E_MarshF_Stand</sprite>
+    <sprite>sprites\spr_E_MarshF_Walk</sprite>
+    <sprite>sprites\spr_E_MarshF_Ground</sprite>
+    <sprite>sprites\spr_Salt_G_Parado</sprite>
+    <sprite>sprites\spr_Salt_G_Andando</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_PAR_Player</object>
     <object>objects\obj_player_Normal</object>
+    <object>objects\obj_E_Marsh</object>
+    <object>objects\obj_PAR_Player</object>
+    <object>objects\obj_PAR_enemy</object>
     <objects name="Solids">
       <object>objects\obj_PAR_Solid</object>
       <object>objects\obj_Solid</object>
       <object>objects\obj_Solid_Ground</object>
       <object>objects\obj_Solid_Wall</object>
     </objects>
+    <object>objects\obj_Globals</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_Test_1</room>
   </rooms>
