@@ -10,8 +10,8 @@
     <sprite>sprites\spr_Solid</sprite>
     <sprite>sprites\spr_Solid_Wall</sprite>
     <sprite>sprites\spr_Solid_Ground</sprite>
-    <sprite>sprites\spr_Wall_Mask</sprite>
     <sprite>sprites\spr_Ground_Mask</sprite>
+    <sprite>sprites\spr_Wall_Mask</sprite>
     <sprite>sprites\spr_Solid_Mask</sprite>
     <sprite>sprites\spr_Salt_Andando</sprite>
     <sprite>sprites\spr_Salt_Pulando</sprite>
@@ -22,6 +22,7 @@
     <sprite>sprites\spr_E_MarshF_Ground</sprite>
     <sprite>sprites\spr_Salt_G_Parado</sprite>
     <sprite>sprites\spr_Salt_G_Andando</sprite>
+    <sprite>sprites\spr_Life_Normal</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -37,6 +38,7 @@
       <object>objects\obj_Solid_Wall</object>
     </objects>
     <object>objects\obj_Globals</object>
+    <object>objects\obj_Life</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Test_1</room>

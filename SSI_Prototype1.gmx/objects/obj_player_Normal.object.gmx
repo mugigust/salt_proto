@@ -36,6 +36,8 @@ eating = false;
 eatalarm = false;
 facing = 1;
 control = true;
+damaged = false;
+vulnerable = true;
 
 bellyFull = false;
 
@@ -44,6 +46,30 @@ jumps = 0;
 jumpsmax = 1;
 
 jspd = 20;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>vulnerable = true;
+control = true;
 </string>
           </argument>
         </arguments>
@@ -195,8 +221,26 @@ if(eatkey &amp;&amp; !eating &amp;&amp; !bellyFull)
     alarm[0] = 1;
 }
 
+if(damaged)
+{
+    vulnerable = false;
+    alarm[2] = 20;
+    if(saltLife &lt; 9)
+        saltLife++;
+    damaged = false;   
+}
 
-if(eating &amp;&amp; !bellyFull)
+if(!vulnerable)
+{
+    control = false;
+    hspd = -((spd * facing)*2);
+    if(jumps &gt; 0)
+    {
+        vspd = -jspd/2;
+        jumps -= 1;
+    } 
+}
+else if(eating &amp;&amp; !bellyFull)
 {
     sprite_index = spr_Salt_Comendo;
     hspd = (spd * facing) * 1.8;
