@@ -29,6 +29,9 @@
 
 globalvar powerUpId; 
 globalvar eatingGlobal;
+globalvar saltLife;
+
+saltLife = 0;
 eatingGlobal = false;
 </string>
           </argument>
