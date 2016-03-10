@@ -227,7 +227,11 @@ if(damaged)
     alarm[2] = 20;
     if(saltLife &lt; 9)
         saltLife++;
-    damaged = false;   
+    damaged = false;
+    if(saltLife &gt; 8)
+    {
+     game_restart();
+    }   
 }
 
 if(!vulnerable)
