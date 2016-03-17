@@ -23,6 +23,7 @@
     <sprite>sprites\spr_Salt_G_Parado</sprite>
     <sprite>sprites\spr_Salt_G_Andando</sprite>
     <sprite>sprites\spr_Life_Normal</sprite>
+    <sprite>sprites\portal</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -39,9 +40,11 @@
     </objects>
     <object>objects\obj_Globals</object>
     <object>objects\obj_Life</object>
+    <object>objects\obj_warp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Test_1</room>
+    <room>rooms\rm_Test_2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
