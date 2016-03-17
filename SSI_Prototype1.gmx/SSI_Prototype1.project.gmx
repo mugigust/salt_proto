@@ -36,6 +36,9 @@
       <sprite>sprites\spr_Wall_Mask</sprite>
       <sprite>sprites\spr_Solid_Mask</sprite>
     </sprites>
+    <sprites name="World Itens">
+      <sprite>sprites\spr_Warp</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_Test</background>
@@ -67,10 +70,12 @@
       <object>objects\obj_PAR_enemy</object>
       <object>objects\obj_E_Marsh</object>
     </objects>
+    <object>objects\obj_warp</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Test Zone">
       <room>rooms\rm_Test_1</room>
+      <room>rooms\rm_Test_2</room>
     </rooms>
     <rooms name="Menus">
       <room>rooms\room1</room>
