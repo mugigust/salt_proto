@@ -6,42 +6,75 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_Salt_Parado</sprite>
-    <sprite>sprites\spr_Solid</sprite>
-    <sprite>sprites\spr_Solid_Wall</sprite>
-    <sprite>sprites\spr_Solid_Ground</sprite>
-    <sprite>sprites\spr_Ground_Mask</sprite>
-    <sprite>sprites\spr_Wall_Mask</sprite>
-    <sprite>sprites\spr_Solid_Mask</sprite>
-    <sprite>sprites\spr_Salt_Andando</sprite>
-    <sprite>sprites\spr_Salt_Pulando</sprite>
-    <sprite>sprites\spr_Salt_Comendo</sprite>
-    <sprite>sprites\spr_E_Marsh_Stand</sprite>
-    <sprite>sprites\spr_E_MarshF_Stand</sprite>
-    <sprite>sprites\spr_E_MarshF_Walk</sprite>
-    <sprite>sprites\spr_E_MarshF_Ground</sprite>
-    <sprite>sprites\spr_Salt_G_Parado</sprite>
-    <sprite>sprites\spr_Salt_G_Andando</sprite>
-    <sprite>sprites\spr_Life_Normal</sprite>
+    <sprites name="Player">
+      <sprites name="Normal Salt">
+        <sprite>sprites\spr_Salt_Pulando</sprite>
+        <sprite>sprites\spr_Salt_Andando</sprite>
+        <sprite>sprites\spr_Salt_Parado</sprite>
+        <sprite>sprites\spr_Salt_Comendo</sprite>
+        <sprite>sprites\spr_Salt_G_Parado</sprite>
+        <sprite>sprites\spr_Salt_G_Andando</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Enemies">
+      <sprites name="Marsh">
+        <sprite>sprites\spr_E_MarshF_Ground</sprite>
+        <sprite>sprites\spr_E_MarshF_Walk</sprite>
+        <sprite>sprites\spr_E_MarshF_Stand</sprite>
+        <sprite>sprites\spr_E_Marsh_Stand</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="UI">
+      <sprite>sprites\spr_Life_Normal</sprite>
+    </sprites>
+    <sprites name="Tiles / Solids">
+      <sprite>sprites\spr_Solid_Wall</sprite>
+      <sprite>sprites\spr_Solid</sprite>
+      <sprite>sprites\spr_Solid_Ground</sprite>
+      <sprite>sprites\spr_Solid_Sub</sprite>
+      <sprite>sprites\spr_Ground_Mask</sprite>
+      <sprite>sprites\spr_Wall_Mask</sprite>
+      <sprite>sprites\spr_Solid_Mask</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_Test</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_PlayerController.gml</script>
+  </scripts>
   <objects name="objects">
-    <object>objects\obj_player_Normal</object>
-    <object>objects\obj_E_Marsh</object>
-    <object>objects\obj_PAR_Player</object>
-    <object>objects\obj_PAR_enemy</object>
     <objects name="Solids">
       <object>objects\obj_PAR_Solid</object>
       <object>objects\obj_Solid</object>
       <object>objects\obj_Solid_Ground</object>
       <object>objects\obj_Solid_Wall</object>
+      <object>objects\obj_Solid_Sub</object>
     </objects>
-    <object>objects\obj_Globals</object>
-    <object>objects\obj_Life</object>
+    <objects name="Player">
+      <object>objects\obj_player_Normal</object>
+      <object>objects\obj_PAR_Player</object>
+    </objects>
+    <objects name="UI">
+      <object>objects\obj_Life</object>
+    </objects>
+    <objects name="Controllers">
+      <object>objects\obj_Globals</object>
+      <object>objects\obj_Background</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\obj_PAR_enemy</object>
+      <object>objects\obj_E_Marsh</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Test_1</room>
+    <rooms name="Test Zone">
+      <room>rooms\rm_Test_1</room>
+    </rooms>
+    <rooms name="Menus">
+      <room>rooms\room1</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
