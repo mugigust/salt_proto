@@ -14,6 +14,7 @@ if(place_meeting(x,y,obj_PAR_Solid))
 {
     while(place_meeting(x,y,obj_PAR_Solid))
     {
+        move = 0;
         x -= facing;
     }
 }
@@ -28,7 +29,7 @@ if (control)
 }
 
 // Gravidade
-if(vspd < 20)
+if(vspd < 50)
 {
     vspd += grav;
 }
@@ -155,11 +156,11 @@ else
 }
 // Controlar a direção que o personagem está virado
 
-if(xprevious < x)
+if(facing = 1)
 {
     image_xscale=1;  
 } 
-else if(xprevious > x)
+else if(facing = -1)
 {
     image_xscale=-1;
 }

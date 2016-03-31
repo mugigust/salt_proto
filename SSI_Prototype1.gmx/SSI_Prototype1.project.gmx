@@ -11,6 +11,7 @@
         <sprite>sprites\spr_Salt_Pulando</sprite>
         <sprite>sprites\spr_Salt_Andando</sprite>
         <sprite>sprites\spr_Salt_Parado</sprite>
+        <sprite>sprites\spr_Salt_Mask</sprite>
         <sprite>sprites\spr_Salt_Comendo</sprite>
         <sprite>sprites\spr_Salt_G_Parado</sprite>
         <sprite>sprites\spr_Salt_G_Andando</sprite>
@@ -29,12 +30,21 @@
     </sprites>
     <sprites name="Tiles / Solids">
       <sprite>sprites\spr_Solid_Wall</sprite>
-      <sprite>sprites\spr_Solid</sprite>
+      <sprite>sprites\spr_Chantilly_Solid_Ledge_Right</sprite>
+      <sprite>sprites\spr_Chantilly_Solid_Ledge_Left</sprite>
+      <sprite>sprites\spr_Chantilly_Solid_Ground</sprite>
+      <sprite>sprites\spr_Chantilly_N_Solid</sprite>
+      <sprite>sprites\spr_Chantilly_Solid</sprite>
+      <sprite>sprites\spr_Chantilly_Solid_Wall</sprite>
+      <sprite>sprites\spr_Chantilly_Solid_Sub</sprite>
+      <sprite>sprites\spr_Death</sprite>
       <sprite>sprites\spr_Solid_Ground</sprite>
       <sprite>sprites\spr_Solid_Sub</sprite>
       <sprite>sprites\spr_Ground_Mask</sprite>
       <sprite>sprites\spr_Wall_Mask</sprite>
       <sprite>sprites\spr_Solid_Mask</sprite>
+      <sprite>sprites\spr_Ledge_L_Mask</sprite>
+      <sprite>sprites\spr_Ledge_R_Mask</sprite>
     </sprites>
     <sprites name="World Itens">
       <sprite>sprites\spr_Warp</sprite>
@@ -54,6 +64,8 @@
       <object>objects\obj_Solid_Ground</object>
       <object>objects\obj_Solid_Wall</object>
       <object>objects\obj_Solid_Sub</object>
+      <object>objects\obj_Ledge_L</object>
+      <object>objects\obj_Ledge_R</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player_Normal</object>
@@ -71,8 +83,10 @@
       <object>objects\obj_E_Marsh</object>
     </objects>
     <object>objects\obj_warp</object>
+    <object>objects\obj_Death</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_W1_R1</room>
     <rooms name="Test Zone">
       <room>rooms\rm_Test_1</room>
       <room>rooms\rm_Test_2</room>

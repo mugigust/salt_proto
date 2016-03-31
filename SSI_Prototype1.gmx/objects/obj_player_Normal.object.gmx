@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>obj_PAR_Player</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_Salt_Mask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Iniciar Variáveis
 
-grav = 1;
-spd = 10;
+grav = 2;
+spd = 12;
 hspd = 5;
 vspd = 0;
 
@@ -45,7 +45,7 @@ jumps = 0;
 
 jumpsmax = 1;
 
-jspd = 20;
+jspd = 31;
 </string>
           </argument>
         </arguments>
