@@ -27,12 +27,16 @@
             <kind>1</kind>
             <string>/// Variáveis Globais
 
+display_reset(8, true);
+
 globalvar powerUpId; 
 globalvar eatingGlobal;
 globalvar saltLife;
 
 saltLife = 0;
 eatingGlobal = false;
+
+window_set_fullscreen(true);
 </string>
           </argument>
         </arguments>
