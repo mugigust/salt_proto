@@ -38,6 +38,8 @@ facing = 1;
 onFire = false;
 alert = false;
 
+pID = 1;
+
 jumps = 0;
 
 jumpsmax = 1;

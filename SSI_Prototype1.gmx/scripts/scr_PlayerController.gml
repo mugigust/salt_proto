@@ -112,19 +112,44 @@ if(!vulnerable)
 }
 else if(eating && !bellyFull)
 {
-    sprite_index = spr_Salt_Comendo;
+    sprite_index = spr_Salt_Chomp;
     hspd = (spd * facing) * 1.8;
-    if(jumps > 0)
+    
+    if(image_index > 5)
+    {
+        image_speed = 0;
+        hspd = 0;
+    }
+    /* if(jumps > 0)
     {
         vspd = -jspd/2;
         jumps -= 1;
     } 
+    */
 }
 else
 {
     if(jumps = 0)
     {
-        sprite_index = spr_Salt_Pulando;
+        if(vspd < 0)
+        {
+            sprite_index = spr_Salt_Jumping;
+            image_index = 0;
+            image_speed = 0;
+        }
+        else if (vspd >= 0)
+        {
+            if(image_index > 3)
+            {
+                image_speed = 0;
+                image_index = 4;
+            }
+            else
+            {
+                image_speed = 0.6;
+            }
+        }
+        
     }
     else
     {   
@@ -132,29 +157,36 @@ else
         {
             if(xprevious != x)
             {
-                sprite_index = spr_Salt_Andando;
-                image_speed = 0.1;  
+                sprite_index = spr_Salt_Walking;
+                image_speed = 0.3;  
             }
             else
             {
-                sprite_index = spr_Salt_Parado;
+                sprite_index = spr_Salt_Idle;
+                image_speed = 0.4;
             }
         }
         else
         {
             if(xprevious != x)
             {
-                sprite_index = spr_Salt_G_Andando;
-                image_speed = 0.1;  
+                sprite_index = spr_FatSalt_Walking;
+                image_speed = 0.3;  
             }
             else
             {
-                sprite_index = spr_Salt_G_Parado;
+                sprite_index = spr_FatSalt_Idle;
+                image_speed = 0.3;
             }
         }
     }
 }
 // Controlar a direção que o personagem está virado
+
+if(bellyFull && keyboard_check(vk_down))
+{
+    
+}
 
 if(facing = 1)
 {

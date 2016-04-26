@@ -4,17 +4,27 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_Track_SnowForest</sound>
+  </sounds>
   <sprites name="sprites">
+    <sprites name="Concepts">
+      <sprite>sprites\spr_Salt_Andando</sprite>
+      <sprite>sprites\spr_Salt_Pulando</sprite>
+      <sprite>sprites\spr_Salt_Parado</sprite>
+      <sprite>sprites\spr_Salt_Comendo</sprite>
+      <sprite>sprites\spr_Salt_G_Andando</sprite>
+      <sprite>sprites\spr_Salt_G_Parado</sprite>
+    </sprites>
     <sprites name="Player">
       <sprites name="Normal Salt">
-        <sprite>sprites\spr_Salt_Pulando</sprite>
-        <sprite>sprites\spr_Salt_Andando</sprite>
-        <sprite>sprites\spr_Salt_Parado</sprite>
+        <sprite>sprites\spr_Salt_Jumping</sprite>
+        <sprite>sprites\spr_Salt_Walking</sprite>
+        <sprite>sprites\spr_Salt_Idle</sprite>
         <sprite>sprites\spr_Salt_Mask</sprite>
-        <sprite>sprites\spr_Salt_Comendo</sprite>
-        <sprite>sprites\spr_Salt_G_Parado</sprite>
-        <sprite>sprites\spr_Salt_G_Andando</sprite>
+        <sprite>sprites\spr_Salt_Chomp</sprite>
+        <sprite>sprites\spr_FatSalt_Idle</sprite>
+        <sprite>sprites\spr_FatSalt_Walking</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">
@@ -26,7 +36,10 @@
       </sprites>
     </sprites>
     <sprites name="UI">
+      <sprite>sprites\spr_ExitButton</sprite>
       <sprite>sprites\spr_Life_Normal</sprite>
+      <sprite>sprites\spr_StartButton</sprite>
+      <sprite>sprites\spr_MenuArrow</sprite>
     </sprites>
     <sprites name="Tiles / Solids">
       <sprite>sprites\spr_Solid_Wall</sprite>
@@ -49,12 +62,19 @@
     <sprites name="World Itens">
       <sprite>sprites\spr_Warp</sprite>
     </sprites>
+    <sprites name="Backgrounds">
+      <sprite>sprites\spr_BG_First_Plane</sprite>
+      <sprite>sprites\spr_BG_Sky</sprite>
+      <sprite>sprites\spr_BG_Second_Plane</sprite>
+      <sprite>sprites\spr_Start_Screen_BG</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_Test</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_PowerUpController.gml</script>
     <script>scripts\scr_PlayerController.gml</script>
   </scripts>
   <objects name="objects">
@@ -73,6 +93,11 @@
     </objects>
     <objects name="UI">
       <object>objects\obj_Life</object>
+      <objects name="Start Menu">
+        <object>objects\obj_StartButton</object>
+        <object>objects\obj_ExitButton</object>
+        <object>objects\obj_MenuArrow</object>
+      </objects>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_Globals</object>
@@ -82,10 +107,17 @@
       <object>objects\obj_PAR_enemy</object>
       <object>objects\obj_E_Marsh</object>
     </objects>
+    <objects name="Background">
+      <object>objects\obj_BG_First_Plane</object>
+      <object>objects\obj_BG_Sky</object>
+      <object>objects\obj_BG_Second_Plane</object>
+      <object>objects\obj_Start_Screen_BG</object>
+    </objects>
     <object>objects\obj_warp</object>
     <object>objects\obj_Death</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Start_Screen</room>
     <room>rooms\rm_W1_R1</room>
     <rooms name="Test Zone">
       <room>rooms\rm_Test_1</room>
