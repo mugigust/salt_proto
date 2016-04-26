@@ -28,7 +28,7 @@
             <string>///Iniciar Variáveis
 
 grav = 2;
-spd = 12;
+spd = 16;
 hspd = 5;
 vspd = 0;
 
@@ -38,6 +38,8 @@ facing = 1;
 control = true;
 damaged = false;
 vulnerable = true;
+
+image_speed = 0.4;
 
 bellyFull = false;
 
@@ -123,7 +125,7 @@ eatingGlobal = true;
 alarm[1] = 20;
 control = false;
 image_index = 0;
-image_speed = 0.08;
+image_speed = 0.4;
 
 </string>
           </argument>
