@@ -31,7 +31,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="bg_Test" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="0" foreground="0" name="bg_Test" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="obj_Solid_Ground" x="193" y="580" name="inst_C57C9EC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_Normal" x="239" y="475" name="inst_E5DB61F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Wall" x="92" y="100" name="inst_8761E7F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Wall" x="92" y="220" name="inst_2B597235" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Wall" x="92" y="340" name="inst_1956C7A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -117,7 +116,6 @@
     <instance objName="obj_Solid_Sub" x="2213" y="700" name="inst_13DB7B50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Sub" x="2112" y="700" name="inst_896E60B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Sub" x="2011" y="700" name="inst_A448351C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_warp" x="2796" y="420" name="inst_EC6157C4" locked="0" code="target_x = 96;&#xA;target_y = 576;&#xA;target_r = rm_Test_2" scaleX="0.351111114025116" scaleY="0.325892865657806" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid" x="92" y="-20" name="inst_2593A347" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Wall" x="2920" y="700" name="inst_DF0068AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Sub" x="900" y="580" name="inst_C9F6F217" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
