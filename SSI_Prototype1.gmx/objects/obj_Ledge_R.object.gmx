@@ -3,7 +3,7 @@
   <spriteName>spr_Chantilly_Solid_Ledge_Right</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>obj_PAR_Solid</parentName>
   <maskName>spr_Ledge_R_Mask</maskName>
