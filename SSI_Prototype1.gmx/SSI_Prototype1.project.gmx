@@ -126,6 +126,22 @@
     <rooms name="Menus">
       <room>rooms\room1</room>
     </rooms>
+    <rooms name="Fases">
+      <room>rooms\room5</room>
+      <room>rooms\room6</room>
+      <room>rooms\room7</room>
+      <room>rooms\room8</room>
+      <room>rooms\room9</room>
+      <room>rooms\room10</room>
+      <room>rooms\room11</room>
+      <room>rooms\room12</room>
+      <room>rooms\room13</room>
+      <room>rooms\room14</room>
+      <room>rooms\room15</room>
+      <room>rooms\room16</room>
+      <room>rooms\room17</room>
+      <room>rooms\room18</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
