@@ -32,9 +32,16 @@ display_reset(8, true);
 globalvar powerUpId; 
 globalvar eatingGlobal;
 globalvar saltLife;
+globalvar transformed;
+globalvar powerupTime;
+transformTime = 0;
 
+powerUpId = 0;
+powerupTime = 0;
 saltLife = 0;
 eatingGlobal = false;
+transformed = false;
+
 
 window_set_fullscreen(true);
 
@@ -64,6 +71,23 @@ window_set_fullscreen(true);
             <string>if(keyboard_check(vk_escape))
 {
     game_restart();
+}
+
+if(transformed)
+{
+    transformTime++;
+    if(transformTime == 60)
+    {
+        transformTime = 0;
+        powerupTime++;
+    }
+}
+
+if(powerupTime == 17)
+{
+    transformed = false;
+    powerupTime = 0;
+    powerUpId = 0;
 }
 </string>
           </argument>
