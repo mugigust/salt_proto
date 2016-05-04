@@ -41,12 +41,50 @@ if(argument0 == 0)
 if(argument0 == 1)
 {
     control = false;
-    sprite_index = attack1Sprite;
-    image_speed = 0.3;
-    if(image_index > 9)
+    if(onGround)
     {
-        control = true;
-        image_speed = 0;
-        attacking = false;
+        if(sprite_index != attack1Sprite)
+        {
+            sprite_index = attack1Sprite;
+            image_index = 0;
+        }
+        image_speed = 0.3;
+        if(image_index > 2 && image_index < 3)
+        {
+            instance_create(x,y,obj_Attack);
+            with(obj_Attack)
+            {
+                mask_index = spr_FireSalt_SideAttackMask;
+            }
+        }
+        if(image_index > 9)
+        {
+            with(obj_Attack)
+                instance_destroy();
+            control = true;
+            image_speed = 0;
+            attacking = false;
+        }
+    }
+    else
+    {
+        onGrav = false;
+        if(sprite_index != attack2Sprite)
+        {
+            sprite_index = attack2Sprite;
+            image_index = 0;
+        }
+        invincible = true;
+        image_speed = 0.3;
+        vspd = 0;
+        hspd = facing * (2*spd);
+        if(image_index > 7)
+        {
+            onGrav = true;
+            control = true;
+            image_speed = 0;
+            attacking = false;
+            invincible = false;
+        }
     }
 }

@@ -28,6 +28,6 @@ if(formID = 1)
     walkingSprite = spr_FireSalt_Walking;
     jumpingSprite = spr_Salt_Jumping;
     attack1Sprite = spr_FireSalt_SideAttack;
-    attack2Sprite = spr_Salt_Chomp;
+    attack2Sprite = spr_FireSalt_PlatformAttack;
     crouchSprite = spr_Salt_Transforming;
 }
