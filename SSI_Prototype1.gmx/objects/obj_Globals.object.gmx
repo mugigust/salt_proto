@@ -88,6 +88,14 @@ if(powerupTime == 17)
     transformed = false;
     powerupTime = 0;
     powerUpId = 0;
+    with(obj_PAR_Player)
+    {
+        attacking = false;
+        onGrav = true;
+        control = true;
+        invincible = false;
+        transforming = true;
+    }
 }
 </string>
           </argument>

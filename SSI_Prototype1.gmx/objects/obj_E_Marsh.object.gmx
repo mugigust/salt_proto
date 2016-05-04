@@ -38,6 +38,11 @@ facing = -1;
 onFire = false;
 alert = false;
 attacking = false;
+dead = false;
+dead2 = false;
+dead3 = false;
+
+hp = 1;
 
 pID = 1;
 
@@ -73,6 +78,29 @@ jspd = 20;
     if(ID == other.spawnID)
         spawned = false;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dead2 = true;
 </string>
           </argument>
         </arguments>
@@ -148,131 +176,178 @@ alarm[2] = 50;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
-if(obj_PAR_Player.x &lt; x &amp;&amp; !alert)
+if((place_meeting(x,y,obj_PAR_Player) || place_meeting(x,y,obj_Spit) || place_meeting(x,y,obj_Attack)) &amp;&amp; !vulnerable)
 {
-    facing = -1;
-}
-if(obj_PAR_Player.x &gt; x &amp;&amp; !alert)
-{
-    facing = 1;
+    hp--;
 }
 
-if((obj_PAR_Player.x &gt; x - 600 &amp;&amp; obj_PAR_Player.x &lt; x + 600) &amp;&amp; !alert)
+if(hp == 0)
 {
-    alert = true;
-    onFire = true;
-}
-if((obj_PAR_Player.x &gt; x - 180 &amp;&amp; obj_PAR_Player.x &lt; x + 180) &amp;&amp; !attacking &amp;&amp; !vulnerable)
-{
-    attacking = true;
+    dead = true;
 }
 
-if(onFire)
+if(!dead)
 {
-    if(!attacking)
-        move = facing;
+    if(obj_PAR_Player.x &lt; x &amp;&amp; !alert)
+    {
+        facing = -1;
+    }
+    if(obj_PAR_Player.x &gt; x &amp;&amp; !alert)
+    {
+        facing = 1;
+    }
+    
+    if((obj_PAR_Player.x &gt; x - 600 &amp;&amp; obj_PAR_Player.x &lt; x + 600) &amp;&amp; !alert)
+    {
+        alert = true;
+        onFire = true;
+    }
+    if((obj_PAR_Player.x &gt; x - 180 &amp;&amp; obj_PAR_Player.x &lt; x + 180) &amp;&amp; !attacking &amp;&amp; !vulnerable)
+    {
+        attacking = true;
+    }
+    
+    if(onFire)
+    {
+        if(!attacking)
+            move = facing;
+        else
+            move = facing * 2.5;  
+    }
     else
-        move = facing * 2.5;  
-}
-else
-    move = 0;
-
-hspd = move * spd;
-
-
-// Gravidade
-if(vspd &lt; 20)
-{
-    vspd += grav;
-}
-
-// Verificar o chão
-if(place_meeting(x, y+1, obj_PAR_Solid))
-{
-    jumps = jumpsmax;
-}
-
-
-// Colisão Horizontal
-if(place_meeting(x+hspd,y,obj_PAR_Solid))
-{
-    while(!place_meeting(x+sign(hspd),y,obj_PAR_Solid))
+        move = 0;
+    
+    hspd = move * spd;
+    
+    
+    // Gravidade
+    if(vspd &lt; 20)
     {
-        x += sign(hspd);
+        vspd += grav;
     }
-    hspd = 0;
-}
-
-
-// Mover Horizontalmente
-
-x += hspd;
-
-// Colisão Vertical
-if(place_meeting(x,y+vspd,obj_PAR_Solid))
-{
-    while(!place_meeting(x,y+sign(vspd),obj_PAR_Solid))
+    
+    // Verificar o chão
+    if(place_meeting(x, y+1, obj_PAR_Solid))
     {
-        y += sign(vspd);
+        jumps = jumpsmax;
     }
-    vspd = 0;
-}
-
-// Mover Verticalmente
-
-y += vspd;
-
-// Controle dos Sprites
-
-if(vulnerable)
-{
-    sprite_index = spr_Marsh_Vulnerable;
-    image_speed = 0.3;
-}
-else
-{
-    if(xprevious != x &amp;&amp; !attacking)
+    
+    
+    // Colisão Horizontal
+    if(place_meeting(x+hspd,y,obj_PAR_Solid))
     {
-            sprite_index = spr_Marsh_Run;
-            image_speed = 0.5;  
+        while(!place_meeting(x+sign(hspd),y,obj_PAR_Solid))
+        {
+            x += sign(hspd);
+        }
+        hspd = 0;
+    }
+    
+    
+    // Mover Horizontalmente
+    
+    
+    
+    // Colisão Vertical
+    if(place_meeting(x,y+vspd,obj_PAR_Solid))
+    {
+        while(!place_meeting(x,y+sign(vspd),obj_PAR_Solid))
+        {
+            y += sign(vspd);
+        }
+        vspd = 0;
+    }
+    
+    // Mover Verticalmente
+    
+    x += hspd;
+    y += vspd;
+    
+    // Controle dos Sprites
+    
+    if(vulnerable)
+    {
+        sprite_index = spr_Marsh_Vulnerable;
+        image_speed = 0.3;
+    }
+    else
+    {
+        if(xprevious != x &amp;&amp; !attacking)
+        {
+                sprite_index = spr_Marsh_Run;
+                image_speed = 0.5;  
+            
+        }
+        else if(attacking)
+        {
+            sprite_index = spr_Marsh_Attack;
+            image_speed = 0.4;
+        }
+        else
+        {
+                sprite_index = spr_Marsh_Idle;
+                image_speed = 0.3;
+        }
+    }
+    
+    // Controlar a direção que o personagem está virado
+    
+    if(facing = 1)
+    {
+        image_xscale=-1;  
+    } 
+    else if(facing = -1)
+    {
+        image_xscale=1;
+    }
+    if(sprite_index == spr_Marsh_Attack)
+    {
+        if(image_index &gt; 8)
+        {
+            image_speed = 0;
+            alarm[1] = 1;
+            attacking = false;   
+        }
+    }
+    if(vulnerable)
+    {
+    
+    }
+}
+else if(dead)
+{
+    if(!dead2)
+    {
+        hspd = -((spd * facing)*2);
+        vspd = -(16/2);
+        sprite_index = spr_Marsh_Death;
+        image_index = 0;
+        image_speed = 0;
+        if(!dead3)
+        {
+        alarm[3] = 10;
+        dead3 = true;
+        }
+        x += hspd;
+        y += vspd;
         
     }
-    else if(attacking)
-    {
-        sprite_index = spr_Marsh_Attack;
-        image_speed = 0.4;
-    }
     else
     {
-            sprite_index = spr_Marsh_Idle;
-            image_speed = 0.3;
+        hspd = 0;
+        vspd = 0;
+        image_speed = 0.3;
+        
+        if(image_index &gt; 3)
+        {
+            instance_destroy();
+        }
     }
+    
 }
 
-// Controlar a direção que o personagem está virado
 
-if(facing = 1)
-{
-    image_xscale=-1;  
-} 
-else if(facing = -1)
-{
-    image_xscale=1;
-}
-if(sprite_index == spr_Marsh_Attack)
-{
-    if(image_index &gt; 8)
-    {
-        image_speed = 0;
-        alarm[1] = 1;
-        attacking = false;   
-    }
-}
-if(vulnerable)
-{
 
-}
 </string>
           </argument>
         </arguments>
