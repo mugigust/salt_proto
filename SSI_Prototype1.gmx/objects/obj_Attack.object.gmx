@@ -25,9 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vulnerable = false;
-pID = 0;
-spawnID = 0;
+            <string>
+facing = obj_PAR_Player.facing;
 </string>
           </argument>
         </arguments>
@@ -50,28 +49,8 @@ spawnID = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(vulnerable &amp;&amp; place_meeting(x,y,obj_PAR_Player) &amp;&amp; eatingGlobal = true)
-{
-    eatingGlobal = false;
-    powerUpId = pID;
-    with(obj_PAR_Player)
-        bellyFull = true;
-    instance_destroy();
-}
-
-if(place_meeting(x,y,obj_PAR_Player))
-{
-    if(!vulnerable)
-    {
-        with(obj_PAR_Player)
-        {
-            if(vulnerable &amp;&amp; !invincible)
-            {
-                damaged = true;
-            }
-        }
-    }
-}
+            <string>
+image_xscale = facing * 1;
 </string>
           </argument>
         </arguments>

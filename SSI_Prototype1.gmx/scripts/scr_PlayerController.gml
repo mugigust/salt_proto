@@ -8,6 +8,15 @@ var jkey = keyboard_check_pressed(vk_up); //Tecla Cima/Pulo
 var jkey_held = keyboard_check(vk_up); //Checagem de tecla pressionada
 var eatkey = keyboard_check_pressed(vk_control); //Tecla de Comer
 
+if(damaged)
+{
+    attacking = false;
+    eating = false;
+    with(obj_Attack)
+    {
+        instance_destroy();
+    }
+}
 if(powerUpId == 0)
 {
     formID = 0;
@@ -32,9 +41,15 @@ if (control)
     else if(move < 0)
         facing = -1;
 }
+else if(!eating && !attacking)
+{
+    hspd = 0;
+    vspd = 0;
+}
 
 // Gravidade
-if(vspd < 50)
+
+if(vspd < 50 && onGrav)
 {
     vspd += grav;
 }
@@ -43,14 +58,19 @@ if(vspd < 50)
 if(place_meeting(x, y+1, obj_PAR_Solid))
 {
     jumps = jumpsmax;
+    onGround = true;
+}
+else
+{
+    onGround = false;
 }
 
-if(jkey_held && !eating && jumps > 0)
+if(jkey_held && !eating && jumps > 0 && control)
 {
     vspd = -jspd;
     jumps -= 1;
 }
-else if(!jkey_held)
+else if(!jkey_held && control)
 {
     if(vspd < 0)
         vspd = vspd / 1.5;
@@ -89,6 +109,7 @@ if(formID == 0)
     
     if(!vulnerable)
     {
+        sprite_index = spr_Salt_Hurt;
         control = false;
         hspd = -((spd * facing)*2);
         if(jumps > 0)
@@ -96,10 +117,11 @@ if(formID == 0)
             vspd = -jspd/2;
             jumps -= 1;
         } 
+        
     }
     else if(doorIn)
     {
-        image_index = spr_Salt_Entering;
+        sprite_index = spr_Salt_Entering;
         image_speed = 0.3;
     }
     else if(spit)
@@ -227,6 +249,7 @@ else
     
     if(!vulnerable)
     {
+        sprite_index = spr_Salt_Hurt;
         control = false;
         hspd = -((spd * facing)*2);
         if(jumps > 0)
@@ -235,49 +258,36 @@ else
             jumps -= 1;
         } 
     }
+    else if(doorIn)
+    {
+        sprite_index = spr_Salt_Entering;
+        image_speed = 0.3;
+    }
     else if(attacking)
     {
         scr_Attack1Controller(formID);
     }
     else if(jumps = 0)
     {
-        if(!bellyFull)
+        sprite_index = jumpingSprite;
+        if(vspd < 0)
         {
-            if(vspd < 0)
+            
+            image_index = 0;
+            image_speed = 0;
+        }
+        else if (vspd >= 0)
+        {
+            if(image_index > 3)
             {
-                sprite_index = jumpingSprite;
-                image_index = 0;
                 image_speed = 0;
+                image_index = 4;
             }
-            else if (vspd >= 0)
+            else
             {
-                if(image_index > 3)
-                {
-                    image_speed = 0;
-                    image_index = 4;
-                }
-                else
-                {
-                    image_speed = 0.6;
-                }
+                image_speed = 0.6;
             }
         }
-        else
-        {
-            if(vspd < 0)
-            {
-                sprite_index = jumpingSprite;
-                image_index = 0;
-                image_speed = 0;
-            }
-            else if (vspd >= 0)
-            {
-                sprite_index = jumpingSprite;
-                image_index = 1;
-                image_speed = 0;
-            }
-        }
-        
     }
     else
     {   

@@ -31,18 +31,36 @@ grav = 2;
 spd = 16;
 hspd = 5;
 vspd = 0;
-
+onGround = false;
+//Controladores da animação de comer
 eating = false;
 eatalarm = false;
+//Direção que Salt está virado
 facing = 1;
+//Variável que diz se o personagem está controlavel
 control = true;
+//Variáveis que controlam a animação de dano
 damaged = false;
 vulnerable = true;
+//Variáveis que controlam a animação de cuspe
 spit = false;
 spit_out = false;
+//Variável que verifica se está transformando
 transforming = false;
+//Variável que verifica se está entrando em alguma porta
 doorIn = false;
+//Variável que verifica se está atacando.
 attacking = false;
+attacking2 = false;
+
+//Controlador de ataque plataforma
+
+platformTimer1 = false;
+platformTimer2 = false;
+platformTimer3 = false;
+onGrav = true;
+
+invincible = false;
 
 formID = 0;
 

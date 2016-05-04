@@ -29,11 +29,14 @@
         <sprite>sprites\spr_FatSalt_Jumping</sprite>
         <sprite>sprites\spr_Salt_Transforming</sprite>
         <sprite>sprites\spr_Salt_Entering</sprite>
+        <sprite>sprites\spr_Salt_Hurt</sprite>
       </sprites>
       <sprites name="Fire Salt">
         <sprite>sprites\spr_FireSalt_Idle</sprite>
         <sprite>sprites\spr_FireSalt_Walking</sprite>
         <sprite>sprites\spr_FireSalt_SideAttack</sprite>
+        <sprite>sprites\spr_FireSalt_SideAttackMask</sprite>
+        <sprite>sprites\spr_FireSalt_PlatformAttack</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">
@@ -99,6 +102,7 @@
     <script>scripts\scr_PlayerSpriteController.gml</script>
     <script>scripts\scr_CollisionController.gml</script>
     <script>scripts\scr_SpawnEnemy.gml</script>
+    <script>scripts\scr_PortalController.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Solids">
@@ -114,6 +118,7 @@
       <object>objects\obj_player_Normal</object>
       <object>objects\obj_PAR_Player</object>
       <object>objects\obj_Spit</object>
+      <object>objects\obj_Attack</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_Life</object>
