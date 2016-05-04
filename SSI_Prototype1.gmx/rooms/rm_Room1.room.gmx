@@ -54,7 +54,7 @@
     <instance objName="obj_Solid" x="2933" y="430" name="inst_D9FB9020" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid" x="2831" y="430" name="inst_CF51B73B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid" x="2729" y="431" name="inst_F2683503" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_warp" x="2852" y="326" name="inst_2E8B774C" locked="0" code="target_x = 64;&#xA;target_y = 320;&#xA;target_r = rm_Room2&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_warp" x="2852" y="326" name="inst_2E8B774C" locked="0" code="portalID = 4&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Ground" x="960" y="704" name="inst_060253ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Ground" x="1056" y="704" name="inst_B7C68967" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Ground" x="1152" y="704" name="inst_B72C3A8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
