@@ -3,7 +3,7 @@
   <spriteName>spr_Warp</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,11 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_PAR_Player.x &gt; x -46 &amp;&amp; obj_PAR_Player.x &lt; x +46 &amp;&amp; obj_PAR_Player.y &gt; y -40 &amp;&amp; obj_PAR_Player.y &lt; y +40 &amp;&amp; keyboard_check(vk_up))
+            <string>if(obj_PAR_Player.x &gt; x -46 &amp;&amp; obj_PAR_Player.x &lt; x +46 &amp;&amp; obj_PAR_Player.y &gt; y -80 &amp;&amp; obj_PAR_Player.y &lt; y +80 &amp;&amp; keyboard_check_pressed(vk_up))
 {
-    obj_player_Normal.x = target_x;
-    obj_player_Normal.y = target_y;
-    room_goto(target_r);
+    with(obj_PAR_Player)
+    {
+        doorIn = true;   
+    }
+}
+
+with(obj_PAR_Player)
+{
+    if(doorIn)
+    {
+        if(image_index &gt; 8)
+        {
+            doorIn = false;
+            x = other.target_x;
+            y = other.target_y;
+            room_goto(other.target_r);
+        }
+    }
 }
 </string>
           </argument>

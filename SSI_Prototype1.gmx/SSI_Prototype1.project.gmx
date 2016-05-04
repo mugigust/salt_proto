@@ -18,6 +18,7 @@
     </sprites>
     <sprites name="Player">
       <sprites name="Normal Salt">
+        <sprite>sprites\spr_Salt_Spit</sprite>
         <sprite>sprites\spr_Salt_Jumping</sprite>
         <sprite>sprites\spr_Salt_Walking</sprite>
         <sprite>sprites\spr_Salt_Idle</sprite>
@@ -25,14 +26,24 @@
         <sprite>sprites\spr_Salt_Chomp</sprite>
         <sprite>sprites\spr_FatSalt_Idle</sprite>
         <sprite>sprites\spr_FatSalt_Walking</sprite>
+        <sprite>sprites\spr_FatSalt_Jumping</sprite>
+        <sprite>sprites\spr_Salt_Transforming</sprite>
+        <sprite>sprites\spr_Salt_Entering</sprite>
+      </sprites>
+      <sprites name="Fire Salt">
+        <sprite>sprites\spr_FireSalt_Idle</sprite>
+        <sprite>sprites\spr_FireSalt_Walking</sprite>
+        <sprite>sprites\spr_FireSalt_SideAttack</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">
       <sprites name="Marsh">
-        <sprite>sprites\spr_E_MarshF_Ground</sprite>
-        <sprite>sprites\spr_E_MarshF_Walk</sprite>
-        <sprite>sprites\spr_E_MarshF_Stand</sprite>
-        <sprite>sprites\spr_E_Marsh_Stand</sprite>
+        <sprite>sprites\spr_Marsh_Vulnerable</sprite>
+        <sprite>sprites\spr_Marsh_Run</sprite>
+        <sprite>sprites\spr_Marsh_Attack</sprite>
+        <sprite>sprites\spr_Marsh_Death</sprite>
+        <sprite>sprites\spr_Marsh_Idle</sprite>
+        <sprite>sprites\spr_Marsh_Mask</sprite>
       </sprites>
     </sprites>
     <sprites name="UI">
@@ -40,6 +51,8 @@
       <sprite>sprites\spr_Life_Normal</sprite>
       <sprite>sprites\spr_StartButton</sprite>
       <sprite>sprites\spr_MenuArrow</sprite>
+      <sprite>sprites\spr_Life_Marsh</sprite>
+      <sprite>sprites\spr_PowerUpTimer</sprite>
     </sprites>
     <sprites name="Tiles / Solids">
       <sprite>sprites\spr_Solid_Wall</sprite>
@@ -68,6 +81,11 @@
       <sprite>sprites\spr_BG_Second_Plane</sprite>
       <sprite>sprites\spr_Start_Screen_BG</sprite>
     </sprites>
+    <sprites name="Projectile">
+      <sprite>sprites\spr_Spit_Moving</sprite>
+      <sprite>sprites\spr_Spit_Mask</sprite>
+      <sprite>sprites\spr_Spit_Destroy</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_Test</background>
@@ -76,6 +94,11 @@
   <scripts name="scripts">
     <script>scripts\scr_PowerUpController.gml</script>
     <script>scripts\scr_PlayerController.gml</script>
+    <script>scripts\scr_TransformCheck.gml</script>
+    <script>scripts\scr_Attack1Controller.gml</script>
+    <script>scripts\scr_PlayerSpriteController.gml</script>
+    <script>scripts\scr_CollisionController.gml</script>
+    <script>scripts\scr_SpawnEnemy.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Solids">
@@ -90,6 +113,7 @@
     <objects name="Player">
       <object>objects\obj_player_Normal</object>
       <object>objects\obj_PAR_Player</object>
+      <object>objects\obj_Spit</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_Life</object>
@@ -106,6 +130,7 @@
     <objects name="Enemies">
       <object>objects\obj_PAR_enemy</object>
       <object>objects\obj_E_Marsh</object>
+      <object>objects\obj_EnemySpawner</object>
     </objects>
     <objects name="Background">
       <object>objects\obj_BG_First_Plane</object>
