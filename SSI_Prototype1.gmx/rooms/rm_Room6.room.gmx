@@ -51,14 +51,13 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_Solid_Wall" x="64" y="32" name="inst_FB9955D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Solid_Wall" x="64" y="128" name="inst_90F19821" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Solid_Wall" x="64" y="224" name="inst_27AFFE74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Solid_Wall" x="64" y="320" name="inst_BEC2D60E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Solid_Wall" x="64" y="416" name="inst_AD75AD44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Solid_Wall" x="64" y="512" name="inst_09E2DF20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Solid_Wall" x="64" y="608" name="inst_AF3EC961" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Solid_Ground" x="192" y="704" name="inst_2A20F892" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="32" name="inst_FB9955D6" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="128" name="inst_90F19821" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="224" name="inst_27AFFE74" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="320" name="inst_BEC2D60E" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="416" name="inst_AD75AD44" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="512" name="inst_09E2DF20" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="608" name="inst_AF3EC961" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Ground" x="288" y="704" name="inst_C5EEC48F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Ground" x="384" y="704" name="inst_487AFD84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Ground" x="1312" y="704" name="inst_7518687D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -95,6 +94,8 @@
     <instance objName="obj_Solid_Sub" x="1280" y="32" name="inst_DCAEC885" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Solid_Sub" x="1344" y="32" name="inst_EF5425BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warp" x="256" y="608" name="inst_DEC61A22" locked="0" code="portalID = 21&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Wall" x="64" y="704" name="inst_C289C6AF" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Solid_Ground" x="192" y="704" name="inst_B5D07208" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
