@@ -152,20 +152,20 @@
       <room>rooms\room1</room>
     </rooms>
     <rooms name="Fases">
-      <room>rooms\room5</room>
-      <room>rooms\room6</room>
-      <room>rooms\room7</room>
-      <room>rooms\room8</room>
-      <room>rooms\room9</room>
-      <room>rooms\room10</room>
-      <room>rooms\room11</room>
-      <room>rooms\room12</room>
-      <room>rooms\room13</room>
-      <room>rooms\room14</room>
-      <room>rooms\room15</room>
-      <room>rooms\room16</room>
-      <room>rooms\room17</room>
-      <room>rooms\room18</room>
+      <room>rooms\rm_Room1</room>
+      <room>rooms\rm_Room2</room>
+      <room>rooms\rm_Room3</room>
+      <room>rooms\rm_Room4</room>
+      <room>rooms\rm_Room5</room>
+      <room>rooms\rm_Room6</room>
+      <room>rooms\rm_Room7</room>
+      <room>rooms\rm_Room8</room>
+      <room>rooms\rm_Room9</room>
+      <room>rooms\rm_Room10</room>
+      <room>rooms\rm_Room11</room>
+      <room>rooms\rm_Room12</room>
+      <room>rooms\rm_Room13</room>
+      <room>rooms\rm_Room14</room>
     </rooms>
   </rooms>
   <help>
