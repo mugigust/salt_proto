@@ -3,7 +3,7 @@
   <spriteName>spr_Chantilly_Solid_Ground</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>obj_PAR_Solid</parentName>
   <maskName>spr_Ground_Mask</maskName>

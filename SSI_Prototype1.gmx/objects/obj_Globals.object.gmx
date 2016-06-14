@@ -34,6 +34,9 @@ globalvar eatingGlobal;
 globalvar saltLife;
 globalvar transformed;
 globalvar powerupTime;
+globalvar hiddenAreaVisible;
+
+hiddenAreaVisible = false;
 transformTime = 0;
 
 powerUpId = 0;
@@ -68,7 +71,9 @@ window_set_fullscreen(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check(vk_escape))
+            <string>roomname = room_get_name(room);
+
+if((keyboard_check(vk_escape) || (gamepad_button_check_pressed(0,gp_select))) &amp;&amp; roomname != "rm_Start_Screen")
 {
     game_restart();
 }
