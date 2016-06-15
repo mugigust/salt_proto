@@ -3,7 +3,7 @@
   <spriteName>spr_Salt_Idle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>-1</persistent>
   <parentName>obj_PAR_Player</parentName>
   <maskName>spr_Salt_Mask</maskName>
@@ -61,6 +61,8 @@ platformTimer3 = false;
 onGrav = true;
 
 invincible = false;
+
+gamepad_set_axis_deadzone(0,0.7);
 
 formID = 0;
 

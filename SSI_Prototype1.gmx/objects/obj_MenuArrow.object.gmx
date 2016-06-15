@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>menu_index = 0;
+gamepad_set_axis_deadzone(0,0.3);
 </string>
           </argument>
         </arguments>
@@ -48,12 +49,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(menu_index == 0 &amp;&amp; keyboard_check(vk_down))
+            <string>if(menu_index == 0 &amp;&amp; (keyboard_check(vk_down) || (gamepad_axis_value(0,gp_axislv) &gt; 0)))
 {
     menu_index = 1;
 }
 
-if(menu_index == 1 &amp;&amp; keyboard_check(vk_up))
+if(menu_index == 1 &amp;&amp; (keyboard_check(vk_up) || (gamepad_axis_value(0,gp_axislv) &lt; 0)))
 {
     menu_index = 0;
 }
@@ -62,14 +63,14 @@ if(menu_index = 0)
 {
     x = 674;
     y = 448;
-    if(keyboard_check(vk_enter))
+    if(keyboard_check(vk_enter) || (gamepad_button_check(0,gp_face1)))
         room_goto(rm_W1_R1);
 }
 if(menu_index = 1)
 {
     x = 674;
     y = 578;
-    if(keyboard_check(vk_enter))
+    if(keyboard_check(vk_enter) || (gamepad_button_check(0,gp_face1)))
         game_end();
 }
 </string>

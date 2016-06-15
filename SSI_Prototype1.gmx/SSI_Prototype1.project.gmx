@@ -48,16 +48,21 @@
         <sprite>sprites\spr_Marsh_Idle</sprite>
         <sprite>sprites\spr_Marsh_Mask</sprite>
       </sprites>
+      <sprites name="Omocream">
+        <sprite>sprites\spr_Omocream_Idle</sprite>
+        <sprite>sprites\spr_Omocream_Mask</sprite>
+        <sprite>sprites\spr_Omocream_Out</sprite>
+        <sprite>sprites\spr_Omocream_Drill</sprite>
+        <sprite>sprites\spr_Omocream_Walk</sprite>
+      </sprites>
     </sprites>
     <sprites name="UI">
-      <sprite>sprites\spr_ExitButton</sprite>
       <sprite>sprites\spr_Life_Normal</sprite>
-      <sprite>sprites\spr_StartButton</sprite>
-      <sprite>sprites\spr_MenuArrow</sprite>
       <sprite>sprites\spr_Life_Marsh</sprite>
       <sprite>sprites\spr_PowerUpTimer</sprite>
     </sprites>
     <sprites name="Tiles / Solids">
+      <sprite>sprites\spr_Button</sprite>
       <sprite>sprites\spr_Solid_Wall</sprite>
       <sprite>sprites\spr_Chantilly_Solid_Ledge_Right</sprite>
       <sprite>sprites\spr_Chantilly_Solid_Ledge_Left</sprite>
@@ -66,6 +71,7 @@
       <sprite>sprites\spr_Chantilly_Solid</sprite>
       <sprite>sprites\spr_Chantilly_Solid_Wall</sprite>
       <sprite>sprites\spr_Chantilly_Solid_Sub</sprite>
+      <sprite>sprites\spr_Destroy_Solid</sprite>
       <sprite>sprites\spr_Death</sprite>
       <sprite>sprites\spr_Solid_Ground</sprite>
       <sprite>sprites\spr_Solid_Sub</sprite>
@@ -74,6 +80,8 @@
       <sprite>sprites\spr_Solid_Mask</sprite>
       <sprite>sprites\spr_Ledge_L_Mask</sprite>
       <sprite>sprites\spr_Ledge_R_Mask</sprite>
+      <sprite>sprites\spr_Path_Block</sprite>
+      <sprite>sprites\spr_Block_Mask</sprite>
     </sprites>
     <sprites name="World Itens">
       <sprite>sprites\spr_Warp</sprite>
@@ -82,12 +90,27 @@
       <sprite>sprites\spr_BG_First_Plane</sprite>
       <sprite>sprites\spr_BG_Sky</sprite>
       <sprite>sprites\spr_BG_Second_Plane</sprite>
-      <sprite>sprites\spr_Start_Screen_BG</sprite>
+      <sprite>sprites\spr_BG_Win</sprite>
+      <sprite>sprites\spr_Secret</sprite>
     </sprites>
     <sprites name="Projectile">
       <sprite>sprites\spr_Spit_Moving</sprite>
       <sprite>sprites\spr_Spit_Mask</sprite>
       <sprite>sprites\spr_Spit_Destroy</sprite>
+    </sprites>
+    <sprites name="Menus">
+      <sprite>sprites\spr_SaltLogo</sprite>
+      <sprites name="Start Menu">
+        <sprite>sprites\spr_StartButton</sprite>
+        <sprite>sprites\spr_Start_Screen_BG</sprite>
+        <sprite>sprites\spr_ExitButton</sprite>
+        <sprite>sprites\spr_MenuArrow</sprite>
+        <sprite>sprites\spr_Back_StartMenu</sprite>
+        <sprite>sprites\spr_FireStarLogo</sprite>
+        <sprite>sprites\spr_BG_Front_StartMenu</sprite>
+        <sprite>sprites\spr_BG_Back_StartMenu</sprite>
+        <sprite>sprites\spr_Press_Start</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -103,6 +126,7 @@
     <script>scripts\scr_CollisionController.gml</script>
     <script>scripts\scr_SpawnEnemy.gml</script>
     <script>scripts\scr_PortalController.gml</script>
+    <script>scripts\scr_CutsceneController.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Solids">
@@ -111,6 +135,10 @@
       <object>objects\obj_Solid_Ground</object>
       <object>objects\obj_Solid_Wall</object>
       <object>objects\obj_Solid_Sub</object>
+      <object>objects\obj_Button</object>
+      <object>objects\obj_PathBlock</object>
+      <object>objects\obj_Solid_Vanishable</object>
+      <object>objects\obj_Destroyable_Solid</object>
       <object>objects\obj_Ledge_L</object>
       <object>objects\obj_Ledge_R</object>
     </objects>
@@ -122,15 +150,11 @@
     </objects>
     <objects name="UI">
       <object>objects\obj_Life</object>
-      <objects name="Start Menu">
-        <object>objects\obj_StartButton</object>
-        <object>objects\obj_ExitButton</object>
-        <object>objects\obj_MenuArrow</object>
-      </objects>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_Globals</object>
       <object>objects\obj_Background</object>
+      <object>objects\obj_CutsceneObject</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_PAR_enemy</object>
@@ -141,14 +165,32 @@
       <object>objects\obj_BG_First_Plane</object>
       <object>objects\obj_BG_Sky</object>
       <object>objects\obj_BG_Second_Plane</object>
-      <object>objects\obj_Start_Screen_BG</object>
+    </objects>
+    <objects name="Menus">
+      <objects name="Start Menu">
+        <object>objects\obj_Start_Screen_BG</object>
+        <object>objects\obj_FireStar_Logo</object>
+        <object>objects\obj_ExitButton</object>
+        <object>objects\obj_MenuArrow</object>
+        <object>objects\obj_StartButton</object>
+        <object>objects\obj_Logo</object>
+        <object>objects\obj_BG_Back_StartMenu</object>
+        <object>objects\obj_PressStart</object>
+        <object>objects\obj_BG_Front_StartMenu</object>
+        <object>objects\obj_SaltLogo</object>
+      </objects>
     </objects>
     <object>objects\obj_warp</object>
     <object>objects\obj_Death</object>
+    <object>objects\obj_Win</object>
+    <object>objects\obj_Secret</object>
+    <object>objects\obj_ScreenShake</object>
+    <object>objects\obj_Cutscene1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Start_Screen</room>
     <room>rooms\rm_W1_R1</room>
+    <room>rooms\rm_W1_R2</room>
     <rooms name="Test Zone">
       <room>rooms\rm_Test_1</room>
       <room>rooms\rm_Test_2</room>

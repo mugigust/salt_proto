@@ -53,7 +53,7 @@ vBaseX = x;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = vBaseX + (view_xview[0]/1.25);
+            <string>x = vBaseX + (view_xview[0]/1.15);
 
 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 </string>

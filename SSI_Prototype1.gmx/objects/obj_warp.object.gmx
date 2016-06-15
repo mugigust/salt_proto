@@ -53,7 +53,7 @@ entered = false;
             <kind>1</kind>
             <string>scr_PortalController(portalID);
 
-if(obj_PAR_Player.x &gt; x -80 &amp;&amp; obj_PAR_Player.x &lt; x +80 &amp;&amp; obj_PAR_Player.y &gt; y -100 &amp;&amp; obj_PAR_Player.y &lt; y +100 &amp;&amp; keyboard_check_pressed(vk_up))
+if(obj_PAR_Player.x &gt; x -80 &amp;&amp; obj_PAR_Player.x &lt; x +80 &amp;&amp; obj_PAR_Player.y &gt; y -100 &amp;&amp; obj_PAR_Player.y &lt; y +100 &amp;&amp; (keyboard_check_pressed(vk_up) || (gamepad_axis_value(0,gp_axislv) &lt; 0)))
 {
     with(obj_PAR_Player)
     {

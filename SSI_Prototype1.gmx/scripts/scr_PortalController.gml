@@ -1,15 +1,17 @@
 switch(argument0)
 {
+    //Portal da Primeira fase;
     case 1:
-        target_x = 350;
-        target_y = 455;
-        target_r = rm_Test_1;
+        target_x = 90;
+        target_y = 575;
+        target_r = rm_W1_R1;
     break;
     
+    //1º Portal da 2ª fase;
     case 2:
-        target_x = 3465;
-        target_y = 573;
-        target_r = rm_W1_R1;
+        target_x = 90;
+        target_y = 575;
+        target_r = rm_W1_R2;
     break;
     
     case 3:
@@ -39,6 +41,12 @@ switch(argument0)
        target_x = 96;
        target_y = 512;
        target_r = rm_Room5;
+    break;
+    
+    case 8:
+       target_x = 96;
+       target_y = 512;
+       target_r = rm_Room7;
     break;
     
      case 22:
